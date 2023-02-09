@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Work+Sans:wght@100;200;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+:root {
+    --h1: 40px;
+    --h2: 32px;
+    --h3: 34px;
+    --h4: 24px;
+    --h5: 20px;
+    --h6: 16px;
+
+    --sub: 20px;
+
+    --label: 16px;
+    --ls: 5px;
+
+    --body: 14px;
+
+ 
+    --color-dark-100: rgba(33, 37, 41, 1);
+    --color-dark-75: rgba(33, 37, 41, 0.75);
+    --color-dark-50: rgba(33, 37, 41, 0.5);
+    --color-dark-25: rgba(33, 37, 41, 0.25);
+
+   
+    --color--white-100: rgba(255, 255, 255, 1);
+    --color--white-75: rgba(255, 255, 255, 0.75);
+    --color--white-50: rgba(255, 255, 255, 0.5);
+    --color--white-25: rgba(255, 255, 255, 0.25);
+
+    --color-green-100: rgba(116, 198, 157, 1);
+    --color-green-100: rgba(116, 198, 157, 0.75);
+    --color-green-100: rgba(116, 198, 157, 0.5);
+    --color-green-100: rgba(116, 198, 157, 0.25);
+
+    --font-1: "Crimson Text", serif;
+    --font-2: "Work Sans", sans-serif;
+    --shadow-1: 3px 4px 12px 1px rgba(0, 0, 0, 0.25);
+}
+/**
+*! style rules for label text
+**/
+
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+}
+/**
+*! style rules for hero section
+**/
+.hero {
+  background:turquoise;
+
+}
+/**
+*! style rules for navbar
+**/
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+.navbar_logo{
+
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 20px;
+}
+.navbar_logo--text{
+  font-size: var(--h2);
+  color: var(--color-dark-100);
+  font-family: var(--font-2);
+  font-weight: 500;
+}
+.navbar_menu{
+
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    font-family: var(--font-2);
+    font-size: var(--h5);
+}
+[class ^="navbar_menu--"]{
+
+    text-decoration: none;
+    color: var(--color-dark-100);
+}
+.navbar__icon{
+    display: none;
+
+}
+.navbar__icon i{
+      font-size: var(--h2);
+      color: var(--color--white-100);
+}
+.hide{
+    display: none;
+}
+/**
+*! style rules for label text
+**/
+.label {
+    font-family: var(--font-1);
+    font-size: var(--label);
+    letter-spacing: var(--ls);
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+/**
+*! style rules for text color
+**/
+.text-white {
+    color: var(--color--white-100);
+}
+.text-dark{
+    color: var(--color-dark-100);
+}
+.text-green {
+    color:rgb(64, 252, 64);
+}
+
+
+/**
+*! style rules for buttons
+**/
+.white-btn,.dark-btn {
+    background: var(--color--white-100);
+    color: var(--color-dark-100);
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-2);
+    font-size: var(--h5);
+    padding: 10px 40px;
+    border-radius: 8px;
+}
+.dark-btn {
+    background: rgb(19, 19, 18);
+    color: var(--color--white-100);
+    cursor: pointer;
+
+}
+/**
+*! style rules responsive image
+**/
+.responsive_image{
+
+  max-width: 100%;
+  height: auto;
+
+}
+
+/**
+*! style rules common class names
+**/
+
+.container {
+
+    max-width: 1140px;
+    margin: auto;
+    
+}
+.grid {
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 25px;
+
+}
+.flex{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+.common-title{
+
+    font-size: var(--h1);
+    font-family: var(--font-1);
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+.text-center{
+text-align: center;
+
+}
+
+
+
+/**
+*! style rules common class names
+**/
+@media(max-width: 1200px){
+    .container {
+
+        max-width: 950px;
+    }
+}
+@media(max-width: 1040px){
+    .container {
+
+        max-width: 740px;
+    }
+    
+}
+@media(max-width: 768px){
+    .container {
+
+        max-width: 500px;
+    }
+    .grid{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+    .navbar_menu{
+        z-index: 1;
+        background-color: var(--color-green-100);
+        height: 100vh;
+        position: absolute;
+        display: flex;
+        top: 15vh;
+        left: 0;
+        width: 100%;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;   
+    }
+    .navbar_menu--1 {
+       margin-top: -200px;
+
+    }
+    .navbar__icon{
+        
+        display: block;
+    }
+    .hidden{
+        z-index: -1;
+        opacity: 0;
+    }
+}
+@media(max-width: 568px){
+    .container {
+
+        max-width: 90%;
+    }
+}
